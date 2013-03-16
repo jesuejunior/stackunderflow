@@ -1,5 +1,9 @@
 package com.sixcodes.model;
 
+import java.util.Date;
+
+import javax.persistence.*;
+
 @Entity
 public class Answer {
 	

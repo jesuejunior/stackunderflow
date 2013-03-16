@@ -1,5 +1,7 @@
 package com.sixcodes.model;
 
+import javax.persistence.*;
+
 @Entity
 public class User {
 
@@ -11,11 +13,11 @@ public class User {
 	
 	private String lastname;
 	
-	@Column(unique=True)
+	@Column(unique=true)
 	private String username;
 	
 	private String password;
 	
-	@Cloumn(unque=True)
+	@Column(unique=true)
 	private String email;
 }
