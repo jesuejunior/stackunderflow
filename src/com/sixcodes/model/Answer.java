@@ -1,7 +1,7 @@
 package com.sixcodes.model;
 
 @Entity
-public class Asnwer {
+public class Answer {
 	
 	@Id
 	@GeneratedValue
