@@ -2,7 +2,12 @@ package com.sixcodes.model;
 
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Entity;
 
 @Entity
 public class Answer {
