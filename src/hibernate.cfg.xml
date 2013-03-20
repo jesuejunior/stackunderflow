@@ -10,7 +10,7 @@
     <property name="hibernate.connection.url">jdbc:postgresql://jesuejunior.com:5432/stack</property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-    
+
     <property name="hibernate.hbm2ddl.auto">update</property>
     
     <property name="show_sql">true</property>
