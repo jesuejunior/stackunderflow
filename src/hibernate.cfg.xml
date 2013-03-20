@@ -7,7 +7,7 @@
   <session-factory>
     <property name="hibernate.connection.username">stack</property>
     <property name="hibernate.connection.password">vivo22</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://jesuejunior.com:5432/stack</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://jesuejunior.com:5432/stack?public</property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
@@ -16,10 +16,10 @@
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
     
-    <mapping class="com.sixcodes.stack.model.User" />
+    <mapping class="com.sixcodes.stack.model.Usuario" />
     <mapping class="com.sixcodes.stack.model.Question" />
     <mapping class="com.sixcodes.stack.model.Tag" />
-    <mapping class="com.sixcodes.stack.model.Group" />
+    <mapping class="com.sixcodes.stack.model.Grupo" />
     <mapping class="com.sixcodes.stack.model.Answer" />
   </session-factory>
 </hibernate-configuration>

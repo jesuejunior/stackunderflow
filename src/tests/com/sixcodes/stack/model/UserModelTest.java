@@ -4,8 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
 
-import com.sixcodes.stack.db.HibernateUtil;
-import com.sixcodes.stack.model.User;
+import com.sixcodes.stack.model.Usuario;
+import com.sixcodes.stack.util.HibernateUtil;
 
 import org.junit.Assert;
 
@@ -14,7 +14,7 @@ public class UserModelTest {
 	@Test
 	public void test() {
 		
-		User user = new User();
+		Usuario user = new Usuario();
 		user.setFirstname("Dalton");
 		user.setLastname("Barreto");
 		
@@ -27,7 +27,7 @@ public class UserModelTest {
 		
 		/*Retrieve from DB*/
 		
-		User dbUser = (User) session.get(User.class, user.getId());
+		Usuario dbUser = (Usuario) session.get(Usuario.class, user.getId());
 		Assert.assertEquals("Dalton", dbUser.getFirstname());
 		Assert.assertEquals("Barreto", dbUser.getLastname());
 		
