@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.username">
+      stack
+    </property>
+    <property name="hibernate.connection.password">
+      vivo22
+    </property>
+    <property name="hibernate.connection.url">
+      jdbc:postgresql://jesuejunior.com/stack
+    </property>
+    <property name="hibernate.connection.driver_class">
+      org.postgresql.Driver
+    </property>
+    <property name="hibernate.dialect">
+      org.hibernate.dialect.PostgreSQLDialect
+    </property>
+    
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+    
+    
+    <mapping class="com.sixcodes.model.User" />
+    <mapping class="com.sixcodes.model.Question" />
+    <mapping class="com.sixcodes.model.Tag" />
+    <mapping class="com.sixcodes.model.Group" />
+    <mapping class="com.sixcodes.model.Answer" />
+  </session-factory>
+</hibernate-configuration>
