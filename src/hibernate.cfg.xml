@@ -16,11 +16,10 @@
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
     
-    
-    <mapping class="com.sixcodes.model.User" />
-    <mapping class="com.sixcodes.model.Question" />
-    <mapping class="com.sixcodes.model.Tag" />
-    <mapping class="com.sixcodes.model.Group" />
-    <mapping class="com.sixcodes.model.Answer" />
+    <mapping class="com.sixcodes.stack.model.User" />
+    <mapping class="com.sixcodes.stack.model.Question" />
+    <mapping class="com.sixcodes.stack.model.Tag" />
+    <mapping class="com.sixcodes.stack.model.Group" />
+    <mapping class="com.sixcodes.stack.model.Answer" />
   </session-factory>
 </hibernate-configuration>
