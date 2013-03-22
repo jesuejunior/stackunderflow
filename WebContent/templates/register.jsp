@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <title>Cadastro</title>
-    <link href="../static/common/css/bootstrap.css" rel="stylesheet" media="screen">
 </head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:import url="base.jsp" />
 <body>
 
     <form class="form-horizontal" action="" method="post">
