@@ -2,11 +2,15 @@ package com.sixcodes.stack.controller;
 
 import java.util.List;
 
+import br.com.caelum.vraptor.Consumes;
+import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.deserialization.Deserializes;
 import static br.com.caelum.vraptor.view.Results.*;
 
 import com.sixcodes.stack.dao.UsuarioDAO;
@@ -22,14 +26,30 @@ public class UsuariosController {
 		this.result = result;
 	}
 	
-	@Path("/usuarios/all.json")
+	@Path("/usuario/list")
 	@Get
-	public void list(){
-		 result.use(json()).from(dao.allUsers()).serialize();
+	public List<Usuario> list(){
+		return dao.allUsers();
 	}
-	@Path("/usuarios")
+	
+	@Path("/usuario/add")
 	@Post
-	public void add(Usuario usuario){
+	public void add(Usuario usuario ){
 		dao.save(usuario);
+		result.redirectTo(this).list();
+	}
+	
+	@Path("/usuario/edit")
+	@Put
+	public void edit(Usuario usuario){
+		dao.edit(usuario);
+		result.redirectTo(this).list();
+	}
+	@Path("/usuario/remove")
+	@Delete
+	public void remove(Long id){
+		Usuario usuario = dao.load(id);
+		dao.remove(usuario);
+		result.redirectTo(UsuariosController.class).list();
 	}
 }

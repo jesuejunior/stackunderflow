@@ -2,6 +2,8 @@ package com.sixcodes.stack.model;
 
 import javax.persistence.*;
 
+
+
 @Entity
 public class Usuario {
 
@@ -9,12 +11,10 @@ public class Usuario {
 	private Long id;
 	
 	private String firstname;
-	
 	private String lastname;
 	
 	@Column(unique=true)
 	private String username;
-	
 	private String password;
 	
 	@Column(unique=true)
