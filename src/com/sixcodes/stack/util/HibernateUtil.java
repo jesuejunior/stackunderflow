@@ -3,6 +3,9 @@ package com.sixcodes.stack.util;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
+import br.com.caelum.vraptor.ioc.ApplicationScoped;
+
+@ApplicationScoped
 public class HibernateUtil {
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
