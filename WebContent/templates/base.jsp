@@ -3,11 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="../static/common/css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="../static/common/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="../static/common/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-    <link href="../static/common/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 </head>
-<body>
+<body class='text-center'>
     <a href="#"><img src="../static/common/img/glyphicons-halflings.png" alt="imagens" /></a>
     <a href="question.jsp">Perguntas</a>
     <a href="#">Tags</a>

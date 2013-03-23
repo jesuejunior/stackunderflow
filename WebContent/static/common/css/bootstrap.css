@@ -1044,6 +1044,7 @@ legend {
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
+  padding-right: 515px;
 }
 
 legend small {
@@ -1964,12 +1965,14 @@ legend + .control-group {
   width: 160px;
   padding-top: 5px;
   text-align: right;
+  padding-left: 300px;
+  margin-right: -300px;
 }
 
 .form-horizontal .controls {
   *display: inline-block;
   *padding-left: 20px;
-  margin-left: 180px;
+  margin-left: -350px;
   *margin-left: 0;
 }
 
