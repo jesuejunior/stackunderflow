@@ -26,6 +26,12 @@ public class QuestionDAO {
 		tx.commit();
 	}
 	
+	public void update(Question question) {
+		Transaction tx = session.beginTransaction();
+		this.session.update(question);
+		tx.commit();
+	}
+	
 	public List<Question> allQuestions(){
 		return this.session.createCriteria(Question.class).list();
 	}
