@@ -13,31 +13,31 @@
             <div class="control-group">
                 <label class="control-label" for="inputFirstName">Nome:</label>
                 <div class="controls">
-                    <input class='controls' type="text" id="inputFirstName" placeholder="Nome">
+                    <input class='controls' type="text" id="inputFirstName" placeholder="Nome" name="entity.firstname" value="${entity.firstname}">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputLastName">Sobrenome:</label>
                 <div class="controls">
-                    <input class='controls' type="text" id="inputLastName" placeholder="Sobrenome">
+                    <input class='controls' type="text" id="inputLastName" placeholder="Sobrenome" name="entity.lastname" value="${entity.lastname}">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputEmail">Email:</label>
                 <div class="controls">
-                    <input class='controls' type="email" id="inputEmail" placeholder="Email">
+                    <input class='controls' type="email" id="inputEmail" placeholder="Email" name="entity.email" value="${entity.email}">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputUsername">Usuario:</label>
                 <div class="controls">
-                    <input class='controls' type="text" id="inputUsername" placeholder="Usuario">
+                    <input class='controls' type="text" id="inputUsername" placeholder="Usuario" name="entity.username" value="${entity.username}">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputPassword">Password:</label>
                 <div class="controls">
-                    <input class="controls" type="password" id="inputPassword" placeholder="Password">
+                    <input class="controls" type="password" id="inputPassword" placeholder="Password" name="entity.password" value="${entity.password}">
                 </div>
             </div>
             <div class="control-group">
