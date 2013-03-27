@@ -1,6 +1,7 @@
 package com.sixcodes.stack.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -10,12 +11,24 @@ public class Question {
 	@Id	@GeneratedValue
 	private long id;
 	
+	private String titulo;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dt_created;
 	
 	private String tx_question;
 	
 	private long user_id_created;
+	
+//	private List<String> tags;
+//
+//	public List<String> getTags() {
+//		return tags;
+//	}
+//
+//	public void setTags(List<String> tags) {
+//		this.tags = tags;
+//	}
 
 	public long getId() {
 		return id;
@@ -23,6 +36,14 @@ public class Question {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public String getTitulo() {
+		return titulo;
+	}
+	
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public Date getDt_created() {

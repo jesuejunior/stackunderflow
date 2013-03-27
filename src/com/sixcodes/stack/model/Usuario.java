@@ -1,6 +1,7 @@
 package com.sixcodes.stack.model;
 
 import javax.persistence.*;
+import org.hibernate.validator.*;
 
 
 
@@ -14,10 +15,14 @@ public class Usuario {
 	private String lastname;
 	
 	@Column(unique=true)
+	@Length(min=6)
 	private String username;
+	
+	@Length(min=6)
 	private String password;
 	
 	@Column(unique=true)
+	@Email
 	private String email;
 
 	public Long getId() {

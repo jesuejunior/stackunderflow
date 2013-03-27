@@ -39,11 +39,11 @@ public class UsuariosController {
 	@Post("/usuarios")
 	public void add(Usuario usuario){
 		if(dao.existeUsuario(usuario)){
-			validator.add(new ValidationMessage("Username já existe, por favor tente outro", "usuario.username"));
+			validator.add(new ValidationMessage("Usuário já está cadastrado, por favor tente outro", "usuario.username"));
 		}
 		validator.onErrorUsePageOf(UsuariosController.class).novo();
 		dao.save(usuario);
-		result.redirectTo(this).list();
+		result.redirectTo(QuestionsController.class).list();
 	}
 	
 	@Get("/usuarios/novo")
@@ -60,17 +60,17 @@ public class UsuariosController {
     public void login(Usuario usuario) {
         Usuario carregado = dao.getUsuarioLogin(usuario);
         if (carregado == null) {
-            validator.add(new ValidationMessage("Login e/ou senha inválidos","usuario.username"));
+            validator.add(new ValidationMessage("Login e/ou senha inválidos","${usuario.username}"));
         }
         validator.onErrorUsePageOf(UsuariosController.class).loginForm();
         usuarioWeb.login(carregado);
-        result.redirectTo(UsuariosController.class).list();
+        result.redirectTo(QuestionsController.class).list();
 	}
 	
 	@Path("/logout")
 	public void logout(){
 		usuarioWeb.logout();
-		result.redirectTo(UsuariosController.class).list();
+		result.redirectTo(QuestionsController.class).list();
 	}
 
 	@Path("/usuario/edit")

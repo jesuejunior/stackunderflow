@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 
+import com.sixcodes.stack.component.UsuarioWeb;
 import com.sixcodes.stack.dao.QuestionDAO;
 import com.sixcodes.stack.model.Question;
 
@@ -18,36 +19,41 @@ public class QuestionsController {
 	
 	private final QuestionDAO dao;
 	private final Result result;
+	private final  UsuarioWeb usuarioWeb;
 	
-	public QuestionsController(QuestionDAO dao, Result result) {
+	public QuestionsController(QuestionDAO dao, Result result,  UsuarioWeb usuarioWeb) {
 		this.dao = dao;
 		this.result = result;
+		this.usuarioWeb = usuarioWeb;
 		}
+	@Get("/questions/nova")
+	public void nova(){
+	}
 
-	@Path("/question/list")
-	@Get
+	@Get("/questions/list")
 	public List<Question> list() {
 		return dao.allQuestions();
 	}
 	
-	@Path("/question/add")
-	@Post
+	@Post("/questions")
 	public void add(Question question) {
+		question.setUser_id_created(usuarioWeb.getId());
 		dao.save(question);
-		// Mudar para url da pergunta de fato criada(ex: /question/1)
 		result.redirectTo(this).list();
 	}
 	
-	@Path("/question/edit")
-	@Put
-	public void edit(Long id){
+	//@Put("/questions/edit")
+	public Question edit(Long id){
 		Question question = dao.load(id);
-		dao.edit(question);
+		return question;
+	}
+	@Put("/questions/altera")
+	public void altera(Question question){
+		dao.update(question);
 		result.redirectTo(this).list();
 	}
 	
-	@Path("question/remove")
-	@Delete
+	//@Delete("/questions/remove/{question.id}")
 	public void remove(Long id){
 		Question question = dao.load(id);
 		dao.remove(question);

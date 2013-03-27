@@ -20,6 +20,10 @@ public class UsuarioWeb implements Serializable{
 		return logado.getFirstname();
 	}
 	
+	public Long getId(){
+		return logado.getId();
+	}
+	
 	public boolean isLogado(){
 		return logado != null;
 	}
