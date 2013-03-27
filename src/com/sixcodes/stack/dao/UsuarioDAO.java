@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.ioc.Component;
 
@@ -19,6 +20,11 @@ public class UsuarioDAO {
 	public UsuarioDAO(){
 		this.session = HibernateUtil.getSessionFactory().openSession();
 	}
+	
+	public boolean existeUsuario(Usuario usuario) {
+        Usuario encontrado = (Usuario) session.createCriteria(Usuario.class).add(Restrictions.eq("username", usuario.getUsername())).uniqueResult();
+        return encontrado != null;
+    }
 
 	public void save(Usuario user) {
 		Transaction tx = session.beginTransaction();
@@ -49,6 +55,10 @@ public class UsuarioDAO {
 		this.session.delete(usuario);
 		tx.commit();
 		
+	}
+	
+	public Usuario getUsuarioLogin(Usuario usuario){
+		return (Usuario) session.createCriteria(Usuario.class).add(Restrictions.eq("username", usuario.getUsername())).add(Restrictions.eq("password", usuario.getPassword())).uniqueResult();
 	}
 
 	public Usuario load(Long id){
